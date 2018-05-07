@@ -5,29 +5,16 @@ import java.util.Map;
 
 import com.game.cli.utils.Constants;
 
-public class CharacterImpl implements ICharacter {
-
-	private String name;
-	private int experience;
+public class CharacterUtil {
 
 	private Map<Characters, String> characters;
 	// private Map<VirtuousCharacters, String> virtuousCharacters;
 
-	public CharacterImpl() {
+	public CharacterUtil() {
 		loadCharcters();
 	}
 
-	@Override
-	public void display() {
-
-	}
-
-	@Override
-	public String getName() {
-		return null;
-	}
-
-	public void loadCharcters() {
+	private void loadCharcters() {
 		this.characters = new HashMap<>();
 		characters.put(Characters.CERSEI, Constants.CERSEI);
 		characters.put(Characters.JOFFREY, Constants.JOFFREY);
@@ -36,8 +23,11 @@ public class CharacterImpl implements ICharacter {
 		characters.put(Characters.RAMSAY_BOLTON, Constants.RAMSAY_BOLTON);
 		characters.put(Characters.WALDER_FREY, Constants.WALDER_FREY);
 		characters.put(Characters.DEAD_ARMY, Constants.DEAD_ARMY);
-		
-		
+
+	}
+
+	public String getCharacter(Characters character) {
+		return characters.get(character);
 	}
 
 }

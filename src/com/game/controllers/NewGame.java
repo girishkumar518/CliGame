@@ -12,7 +12,7 @@ public class NewGame implements IGameController {
 
 	private static final String dsiplayMsg = "Please Create NEW Character \n Please Enter the NAME of the Character ::";
 	
-	private Static final String succMsg = "New Character Created Succesfully";
+	private static final String succMsg = "New Character Created Succesfully";
 
 	@Override
 	public IScreen performOperation() {

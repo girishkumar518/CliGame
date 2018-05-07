@@ -5,16 +5,21 @@ import java.io.Serializable;
 import com.game.places.IPlace;
 
 public class Player implements Serializable {
-	
+
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 5514867355559638715L;
-	
-	
+
 	private String name;
 	private int experience;
 	private IPlace currentPlace;
+
+	public Player(String name) {
+
+		this.name = name;
+		experience = 0;
+	}
 
 	public String getName() {
 		return name;

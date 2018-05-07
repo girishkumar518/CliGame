@@ -22,4 +22,10 @@ public class GameMenuScreen implements IScreen {
 		return true;
 	}
 
+	@Override
+	public void setHasNext(boolean hasNext) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }
