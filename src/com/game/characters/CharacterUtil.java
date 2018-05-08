@@ -7,15 +7,11 @@ import com.game.cli.utils.Constants;
 
 public class CharacterUtil {
 
-	private Map<Characters, String> characters;
+	private static Map<Characters, String> characters;
 	// private Map<VirtuousCharacters, String> virtuousCharacters;
 
-	public CharacterUtil() {
-		loadCharcters();
-	}
-
-	private void loadCharcters() {
-		this.characters = new HashMap<>();
+	private static void loadCharcters() {
+		characters = new HashMap<>();
 		characters.put(Characters.CERSEI, Constants.CERSEI);
 		characters.put(Characters.JOFFREY, Constants.JOFFREY);
 		characters.put(Characters.KHAL_DRAGO, Constants.KHAL_DRAGO);
@@ -26,7 +22,10 @@ public class CharacterUtil {
 
 	}
 
-	public String getCharacter(Characters character) {
+	public static String getCharacter(Characters character) {
+		if (characters == null)
+			loadCharcters();
+
 		return characters.get(character);
 	}
 

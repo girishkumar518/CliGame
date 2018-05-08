@@ -4,7 +4,7 @@ import com.game.menus.IScreen;
 
 public interface IGameController {
 
-	public IScreen performOperation();
+	public IScreen performOperation(IScreen screen);
 
 	public String getName();
 

@@ -2,6 +2,7 @@ package com.game.controllers;
 
 import java.util.Arrays;
 
+import com.game.characters.Player;
 import com.game.display.GameConsole;
 import com.game.menus.GameScreen;
 import com.game.menus.IScreen;
@@ -11,18 +12,26 @@ public class NewGame implements IGameController {
 	private static final String name = "N - New Game";
 
 	private static final String dsiplayMsg = "Please Create NEW Character \n Please Enter the NAME of the Character ::";
-	
+
 	private static final String succMsg = "New Character Created Succesfully";
 
 	@Override
-	public IScreen performOperation() {
+	public IScreen performOperation(IScreen screen) {
 
-		IScreen screen = new GameScreen(Arrays.asList(new ExitGame()));
+		screen.setGameControls(Arrays.asList(new ExitGame(), new SaveGame(), new PlayGame()));
 		screen.setHasNext(true);
-		
+
 		GameConsole.getInstance().display(dsiplayMsg);
 
-		return null;
+		String playerName = GameConsole.getInstance().readInput();
+
+		Player player = new Player(playerName);
+
+		GameConsole.getInstance().display(succMsg);
+
+		screen.setPlayer(player);
+
+		return screen;
 
 	}
 

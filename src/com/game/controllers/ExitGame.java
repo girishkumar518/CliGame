@@ -1,17 +1,8 @@
 package com.game.controllers;
 
-import java.util.List;
-
 import com.game.menus.IScreen;
 
 public class ExitGame implements IGameController {
-
-	@Override
-	public IScreen performOperation() {
-		return null;
-		// TODO Auto-generated method stub
-		
-	}
 
 	@Override
 	public String getName() {
@@ -21,6 +12,12 @@ public class ExitGame implements IGameController {
 	@Override
 	public String getPlayerInput() {
 		return "E";
+	}
+
+	@Override
+	public IScreen performOperation(IScreen screen) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

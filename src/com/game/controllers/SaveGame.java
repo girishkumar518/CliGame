@@ -5,13 +5,6 @@ import com.game.menus.IScreen;
 public class SaveGame implements IGameController {
 
 	@Override
-	public IScreen performOperation() {
-		return null;
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public String getName() {
 		return "S - Save Game";
 	}
@@ -20,6 +13,12 @@ public class SaveGame implements IGameController {
 	public String getPlayerInput() {
 		// TODO Auto-generated method stub
 		return "S";
+	}
+
+	@Override
+	public IScreen performOperation(IScreen screen) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

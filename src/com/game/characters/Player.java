@@ -2,7 +2,8 @@ package com.game.characters;
 
 import java.io.Serializable;
 
-import com.game.places.IPlace;
+import com.game.cli.utils.Constants;
+import com.game.places.Places;
 
 public class Player implements Serializable {
 
@@ -13,12 +14,13 @@ public class Player implements Serializable {
 
 	private String name;
 	private int experience;
-	private IPlace currentPlace;
+	private Places currentPlace;
 
 	public Player(String name) {
 
 		this.name = name;
 		experience = 0;
+		currentPlace = Constants.FIRST_PLACE;
 	}
 
 	public String getName() {
@@ -37,11 +39,11 @@ public class Player implements Serializable {
 		this.experience = experience;
 	}
 
-	public IPlace getCurrentPlace() {
+	public Places getCurrentPlace() {
 		return currentPlace;
 	}
 
-	public void setCurrentPlace(IPlace currentPlace) {
+	public void setCurrentPlace(Places currentPlace) {
 		this.currentPlace = currentPlace;
 	}
 

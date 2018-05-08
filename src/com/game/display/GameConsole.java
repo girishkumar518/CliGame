@@ -87,8 +87,11 @@ public class GameConsole implements IDisplay {
 
 	@Override
 	public void displayScreen(IScreen screen) {
-		
-		
+
+	}
+
+	public String readInput() {
+		return scanner.next();
 	}
 
 }

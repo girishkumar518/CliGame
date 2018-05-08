@@ -9,7 +9,7 @@ import com.game.controllers.LoadGame;
 import com.game.controllers.NewGame;
 import com.game.display.GameConsole;
 import com.game.display.IDisplay;
-import com.game.menus.GameMenuScreen;
+import com.game.menus.GameScreen;
 import com.game.menus.IScreen;
 
 /*
@@ -22,18 +22,18 @@ import com.game.menus.IScreen;
 
 public class GameDriver {
 
-	IDisplay display;
+	IDisplay display = GameConsole.getInstance();
 	IScreen screen;
 
-	public GameDriver(IDisplay display, IScreen screen) {
-		this.display = display;
+	public GameDriver(IScreen screen) {
 		this.screen = screen;
+		this.screen.setHasNext(true);
 	}
 
 	public static void main(String[] args) {
 
-		GameDriver gameDriver = new GameDriver(GameConsole.getInstance(),
-				new GameMenuScreen(Arrays.asList(new NewGame(), new LoadGame(), new ExitGame())));
+		GameDriver gameDriver = new GameDriver(
+				new GameScreen(Arrays.asList(new NewGame(), new LoadGame(), new ExitGame())));
 		gameDriver.start();
 
 	}
@@ -42,16 +42,16 @@ public class GameDriver {
 
 		display.display(Constants.startupMsg);
 
-		// while (screen.hasScreens()) {
+		while (screen.hasNextScreen()) {
 
-		// display game controllers
-		display.displayGameControllers(screen.getGameControls());
+			// display game controllers
+			display.displayGameControllers(screen.getGameControls());
 
-		IGameController controller = display.readInput(screen.getGameControls());
+			IGameController controller = display.readInput(screen.getGameControls());
 
-		controller.performOperation();
+			screen = controller.performOperation(screen);
 
-		// }
+		}
 
 	}
 

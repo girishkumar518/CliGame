@@ -1,5 +1,7 @@
 package com.game.cli.utils;
 
+import com.game.places.Places;
+
 public class Constants {
 
 	public static final String startupMsg = "\n"
@@ -108,5 +110,7 @@ public class Constants {
 	public static final String WALDER_FREY = null;
 
 	public static final String DEAD_ARMY = null;
+
+	public static final Places FIRST_PLACE = Places.DORNE;
 
 }
