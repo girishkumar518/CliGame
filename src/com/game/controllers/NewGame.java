@@ -4,12 +4,9 @@ import java.util.Arrays;
 
 import com.game.characters.Player;
 import com.game.display.GameConsole;
-import com.game.menus.GameScreen;
 import com.game.menus.IScreen;
 
 public class NewGame implements IGameController {
-
-	private static final String name = "N - New Game";
 
 	private static final String dsiplayMsg = "Please Create NEW Character \n Please Enter the NAME of the Character ::";
 
@@ -37,7 +34,7 @@ public class NewGame implements IGameController {
 
 	@Override
 	public String getName() {
-		return this.name;
+		return "N - New Game";
 	}
 
 	@Override

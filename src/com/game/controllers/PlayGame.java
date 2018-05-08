@@ -23,7 +23,7 @@ public class PlayGame implements IGameController {
 	@Override
 	public IScreen performOperation(IScreen screen) {
 
-		screen.setGameControls(Arrays.asList(new ExitGame(), new SaveGame(), new PlayGame(), new Fight()));
+		screen.setGameControls(Arrays.asList(new ExitGame(), new SaveGame(), new Fight()));
 
 		Player player = screen.getPlayer();
 

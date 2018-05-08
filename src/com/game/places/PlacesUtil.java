@@ -1,20 +1,18 @@
 package com.game.places;
 
+import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
-import com.game.characters.CharacterUtil;
 import com.game.characters.Characters;
 
 public class PlacesUtil {
 
 	static Map<Places, Characters> map;
 
-	CharacterUtil util;
+	private static void loadPlacesMap() {
 
-	private static void loadPlaces() {
-
-		map = new TreeMap<>();
+		map = new LinkedHashMap<>();
 		map.put(Places.DORNE, Characters.MOUNTAIN);
 		map.put(Places.ISLES_RIVERS, Characters.MOUNTAIN);
 		map.put(Places.MOUNTAIN_VALE, Characters.MOUNTAIN);
@@ -27,12 +25,28 @@ public class PlacesUtil {
 
 	public static Places getNextPlace(Places place) {
 
-		return null;
+		// System.out.println("G "+map.higherKey(place));
+		// System.out.println("G "+map.lowerKey(place));
+		boolean nextFlg = false;
+		for (Places p : map.keySet()) {
+
+			if (nextFlg) {
+				place = p;
+				nextFlg = false;
+				break;
+			}
+
+			if (p.equals(place)) {
+				nextFlg = true;
+			}
+		}
+
+		return place;
 	}
 
 	public static Characters getCharacter(Places place) {
 		if (map == null)
-			loadPlaces();
+			loadPlacesMap();
 
 		return map.get(place);
 	}

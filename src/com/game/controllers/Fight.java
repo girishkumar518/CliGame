@@ -33,16 +33,23 @@ public class Fight implements IGameController {
 
 		if (won) {
 			player.setExperience(player.getExperience() + 10);
+
 			player.setCurrentPlace(PlacesUtil.getNextPlace(player.getCurrentPlace()));
+
 			sb.append("Congratulations you WON the FIGHT\n");
 			sb.append("Your experience increased to 10 \n");
 			sb.append("Your Current Experience is " + player.getExperience() + "\n");
-			sb.append("Please select Fight to continue ");
+
+			if (player.getCurrentPlace() == null)
+				sb.append("Congratulations You have Completed THE GAME OF THRONES \n");
+			else
+				sb.append("Please select Play Game to continue \n");
+
 		} else
 			sb.append("Sorry you LOST the FIGHT, Select option Fight to rematch with "
 					+ PlacesUtil.getCharacter(player.getCurrentPlace()).getName());
 
-		screen.setGameControls(Arrays.asList(new ExitGame(), new SaveGame(), new Fight()));
+		screen.setGameControls(Arrays.asList(new ExitGame(), new SaveGame(), new PlayGame()));
 
 		GameConsole.getInstance().display(sb.toString());
 
