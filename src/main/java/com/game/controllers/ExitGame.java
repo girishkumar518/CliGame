@@ -1,5 +1,7 @@
 package com.game.controllers;
 
+import com.game.cli.utils.Constants;
+import com.game.display.GameConsole;
 import com.game.menus.IScreen;
 
 public class ExitGame implements IGameController {
@@ -16,8 +18,12 @@ public class ExitGame implements IGameController {
 
 	@Override
 	public IScreen performOperation(IScreen screen) {
-		// TODO Auto-generated method stub
-		return null;
+
+		GameConsole.getInstance().display(Constants.THANK_YOU);
+
+		System.exit(0);
+
+		return screen;
 	}
 
 }
