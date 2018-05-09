@@ -1,6 +1,5 @@
 package com.game.places;
 
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -13,13 +12,13 @@ public class PlacesUtil {
 	private static void loadPlacesMap() {
 
 		map = new LinkedHashMap<>();
-		map.put(Places.DORNE, Characters.MOUNTAIN);
-		map.put(Places.ISLES_RIVERS, Characters.MOUNTAIN);
+		map.put(Places.DORNE, Characters.ELLARIA_SAND);
+		map.put(Places.ISLES_RIVERS, Characters.DEAD_ARMY);
 		map.put(Places.MOUNTAIN_VALE, Characters.MOUNTAIN);
-		map.put(Places.NORTH, Characters.MOUNTAIN);
+		map.put(Places.NORTH, Characters.RAMSAY_BOLTON);
 		map.put(Places.REACH, Characters.MOUNTAIN);
-		map.put(Places.ROCK, Characters.MOUNTAIN);
-		map.put(Places.STORMLANDS, Characters.MOUNTAIN);
+		map.put(Places.ROCK, Characters.CERSEI);
+		map.put(Places.STORMLANDS, Characters.JOFFREY);
 
 	}
 

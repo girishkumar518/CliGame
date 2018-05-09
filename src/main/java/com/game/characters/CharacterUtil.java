@@ -19,6 +19,7 @@ public class CharacterUtil {
 		characters.put(Characters.RAMSAY_BOLTON, Constants.RAMSAY_BOLTON);
 		characters.put(Characters.WALDER_FREY, Constants.WALDER_FREY);
 		characters.put(Characters.DEAD_ARMY, Constants.DEAD_ARMY);
+		characters.put(Characters.ELLARIA_SAND, Constants.ELLARIA_SAND);
 
 	}
 
