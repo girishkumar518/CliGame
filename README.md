@@ -3,6 +3,3 @@ GAME OF THRONES
 #HOW TO RUN.  
 - Build the package by the following: 'mvn clean package'.  
 - The game can easily be executed by the following: 'java -jar game-0.0.1-SNAPSHOT.jar'.  
-
-DIFFERENT PLACES   
-- As a player I want to save and resume a game.-- IMPLEMENTED BY PROVIDING ALL THE OPTIONS 
